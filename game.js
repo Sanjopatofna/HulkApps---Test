@@ -7,8 +7,8 @@ function init(player, OPPONENT){
     const COLUMN = 3;
     const ROW = 3;
     const SPACE_SIZE = 150;
-
-    
+    let SIZE;
+ 
     let gameData = new Array(9);
     
     
@@ -54,6 +54,21 @@ function init(player, OPPONENT){
     }
     drawBoard();
 
+    function setSpaceSize(){
+        if(window.innerWidth>=600) {
+            SIZE=150;
+        }else if(window.innerWidth<400){
+            SIZE=90;
+        }else if(window.innerWidth<500){
+            SIZE=110;
+        }else if(window.innerWidth<600){
+            SIZE=130;
+        }
+     
+    }
+    
+    window.onresize=setSpaceSize;
+    setSpaceSize();
    
     canvas.addEventListener("click", function(event){
         
@@ -64,9 +79,8 @@ function init(player, OPPONENT){
         let X = event.clientX - canvas.getBoundingClientRect().x;
         let Y = event.clientY - canvas.getBoundingClientRect().y;
 
-        
-        let i = Math.floor(Y/SPACE_SIZE);
-        let j = Math.floor(X/SPACE_SIZE);
+        let i = Math.floor(Y/SIZE);
+        let j = Math.floor(X/SIZE);
 
         
         let id = board[i][j];
@@ -244,7 +258,7 @@ function init(player, OPPONENT){
     function showGameOver(player){
         let message = player == "tie" ? "Oops No Winner" : "The Winner is";
         let imgSrc = `img/${player}.png`;
-
+    
         gameOverElement.innerHTML = `
             <h1>${message}</1>
             <img class="winner-img" src=${imgSrc} </img>

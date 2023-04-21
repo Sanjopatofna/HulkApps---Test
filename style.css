@@ -118,13 +118,14 @@ body{
 
 .gameover .winner-img{
     display: block;
+    width: 200px;
     margin: 20px auto;
 }
 
 .gameover .play{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 1em;
-    width: 150px;
+    width: 250px;
     display: block;
     margin: 25px auto;
     border-radius: 5px;
@@ -137,7 +138,7 @@ body{
     transition: 100ms width ease-in;
 }
 .gameover .play:hover{
-    width: 200px;
+    width: 270px;
 }
 @media (max-width: 600px) {
     
@@ -168,11 +169,16 @@ body{
         font-size: 40px;
         margin: 20px 0 15px 0;
     }
-
+    .gameover .winner-img{
+        width: 165px; 
+    }
     .gameover .play{
         font-size: 0.9em;
-        width: 140px;
+        width: 200px;
         margin: 20px auto;
+    }
+    .gameover .play:hover{
+        width: 250px;
     }
     
 }
@@ -213,10 +219,15 @@ body{
         font-size: 35px;
         margin: 20px 0 15px 0;
     }
-
+    .gameover .winner-img{
+        width: 140px; 
+     }
     .gameover .play{
         font-size: 0.8em;
         width: 140px;
+    }
+    .gameover .play:hover{
+        width: 200px;
     }
     
 }
@@ -259,9 +270,14 @@ body{
     .gameover h1{
         font-size: 25px;
     }
-    
+    .gameover .winner-img{
+       width: 100px; 
+    }
     .gameover .play{
         font-size: 0.8em;
         width: 140px;
+    }
+    .gameover .play:hover{
+        width: 200px;
     }
 }
